@@ -1,0 +1,281 @@
+\documentclass[12pt, letterpaper]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % Times New Roman
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[style=chicago-authordate, backend=biber]{biblatex}
+\usepackage{csquotes}
+\usepackage{hanging}
+
+\addbibresource{references.bib}
+
+% Color command for edits
+\definecolor{editblue}{RGB}{0, 70, 180}
+\newcommand{\blue}[1]{\textcolor{editblue}{#1}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+\doublespacing
+
+\title{\textbf{When States Rescue Their Own: \\ \blue{A Rationalist Framework for Explaining} Non-Combatant Evacuation Operations}}
+\author{Henry Zhou \\ Georgetown University}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent \blue{What explains the variation in how states protect their citizens abroad during international crises? Despite the growing number of nationals overseas and the increasing frequency of evacuation operations, political science has paid remarkably little attention to this question. This paper develops a rationalist cost-minimization framework organized around two dimensions---the cost of action and the cost of inaction---that together generate predictions about when states will undertake vigorous evacuations, token efforts, or no response at all. I illustrate the framework with case studies of U.S. behavior during the 2006 and 2024 Lebanon crises, the 2023 Israel crisis, and a multi-state comparison of the 2011 Libya evacuations. I then propose a measurement strategy and pilot dataset design grounded in the Uppsala Conflict Data Program. The framework consolidates a wide range of situational factors into two analyzable dimensions and offers a foundation for systematic empirical investigation of a phenomenon that sits at the intersection of international political economy and security studies.}
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+%% ============================================================
+%% INTRODUCTION
+%% ============================================================
+\section{Introduction}
+
+Globalization has facilitated not only the free movement of goods and capital across borders but also significantly increased the mobility of people. Massive international migration and tourism have resulted in large populations of citizens abroad who frequently face uncertainties beyond their home governments' control. For example, in 2022 there were approximately 4.4 million Americans overseas, and around 3.5 million Britons abroad as of 2023. This unprecedented scale has posed considerable challenges for states in terms of protecting their citizens abroad.
+
+When contingencies arise in foreign territories placing overseas citizens in peril, governments are compelled to act. However, states differ notably in their responses to similar crises, and even the same state can exhibit varied behaviors across different incidents. At one end of the spectrum, governments sometimes publicly commit substantial military resources to ensure citizen safety. For instance, the Biden administration pledged to ``mobilize every resource'' to evacuate Americans from Afghanistan, and the Chinese government deployed military aircraft and advanced naval vessels during the Libyan crisis in 2011. At the other end, some states explicitly emphasize that governmental assistance should not be assumed. The Australian government, for instance, has repeatedly underscored that while it attempts to provide support, no individual holds an automatic right to consular assistance. Similarly, during the Russia-Ukraine conflict, the U.S.\ government urged its citizens to have no ``reasonable expectation'' of government rescue.
+
+What explains this variation in state behavior regarding overseas citizen protection during crises? This question is increasingly significant as states grapple with the externalities of international crises, which threaten the safety of their citizens abroad and potentially destabilize domestic politics. Despite its theoretical and practical importance, this issue remains underexplored in political science literature. Existing research, predominantly from policy and legal perspectives, addresses state obligations (both de jure and de facto), legality under international law, situational determinants, and emerging international cooperative mechanisms. However, a clear analytical framework for understanding state actions concerning overseas citizen protection is still lacking.
+
+\blue{This paper takes a first step toward filling that gap. I develop a rationalist framework that models evacuation decisions as a function of two cost dimensions: the \emph{cost of action}---the material and logistical resources required to execute an evacuation---and the \emph{cost of inaction}---the political and economic losses a government incurs from failing to act. These two dimensions generate a two-by-two matrix of expected state behavior, from routine evacuations to deliberate non-responses. I then illustrate the framework through detailed case studies and propose a measurement strategy for systematic empirical testing.}
+
+\blue{The paper proceeds as follows. Section 2 reviews the existing literature on state obligations, international legality, and situational determinants of evacuation operations. Section 3 develops the theoretical framework and derives observable predictions. Section 4 presents case studies of the U.S.\ response to the 2006 and 2024 Lebanon crises, the 2023 Israel crisis, and a multi-state comparison of the 2011 Libya evacuations. Section 5 outlines the proposed research design, measurement strategy, and limitations. Section 6 concludes.}
+
+%% ============================================================
+%% LITERATURE REVIEW
+%% ============================================================
+\section{Literature Review}
+
+\blue{The existing literature on non-combatant evacuation operations (NEOs) spans several disciplines but lacks a unified analytical framework. I organize the relevant work along three dimensions: the normative question of state obligation, the legal question of sovereignty and use of force, and the practical question of operational determinants.}
+
+\subsection{\blue{State Obligation and Public Expectation}}
+
+Does a state have an obligation to protect its citizens abroad? Both Hobbesian and Rousseauan political theories suggest such an obligation exists. Whether conceptualized as an absolute leviathan or a social contract entity, the state's fundamental role includes protecting its citizens. Domestically, this duty is widely accepted and internationally reinforced by the Responsibility to Protect (R2P) doctrine, which mandates states to safeguard their populations from mass atrocities and legitimizes international intervention if a state fails in this duty.
+
+However, the extent of a state's obligation to protect citizens outside its sovereign territory is less clear. Some countries explicitly codify this obligation, such as the U.S.\ Omnibus Diplomatic Security and Antiterrorism Act of 1986 (ODSAA), which requires the U.S.\ Department of State (DOS) to ``develop and implement policies and programs to provide for the safe and efficient evacuation of \ldots\ private United States citizens when their lives are endangered.'' Elsewhere, such duty is downplayed at best. The British government's official guidance for nationals overseas stresses that the government ``do not have a general duty of care to British nationals abroad.'' In Australia, the government's consular strategy aims to ``promote a culture of self-reliance, personal responsibility and self-help'' among citizens abroad. In these cases, governments seek to ``responsibilize'' their citizens in emergencies by using rhetoric of ``resilience'' and by orchestrating civilian efforts rather than directly intervening themselves \autocite{Lowenheim2007}.
+
+Yet, despite differing governmental stances, public expectations of government protection seem consistently high. Despite the explicit ``no duty of care'' policy, the United Kingdom launched a military operation to evacuate its citizens during the Libya crisis after severe criticism, and its perceived slowness of response even triggered a parliamentary inquiry into Whitehall's handling of the operation. The public expectation remains unchanged despite some states' efforts to emphasize government non-obligation. Australian consular officials have repeatedly stressed to citizens that overseas assistance is constrained, and the onus of security is on the individual. However, as one official admitted, ``there's no slackening of expectation'' \autocite{Bond2016}. Countries like the U.S., Switzerland, and Australia have long tried to maintain mechanisms where citizens are required to pay for their evacuation expenses, yet such policies have been so politically unpalatable that payment usually gets waived after the operation.
+
+\blue{The persistence of public expectations despite official disclaimers is sustained through at least three mechanisms.} First, given political sensitivity, politicians are prone to rhetorically affirm their commitments to forceful action. For instance, the British government's Defense Strategic Direction in 2011 pointed to NEO as a non-discretionary intervention, and former Secretary of State Michael Fallon similarly affirmed that the first duty of government is ``to defend our country and our people.'' Second, the track record of successful state evacuation operations contributes to a self-reinforcing cycle where public expectations are met and sustained. Third, evacuation operations conducted by other states create ``peer pressure'' that further fuels citizens' expectations of similar behavior from their own government---effects that can be amplified by media coverage, including social media.
+
+\blue{This gap between official policy and public expectation is theoretically significant. It suggests that a purely legalistic analysis of state obligations misses the operative political dynamics. What matters for state behavior is not whether a legal duty exists, but whether the \emph{political costs} of inaction exceed the \emph{material costs} of action---a logic I formalize in Section 3.}
+
+\subsection{\blue{International Legality and Sovereignty}}
+
+Even when states have the willingness and capacity to act, their action may not be legitimate under the UN Charter and customary international law. First, if a state decides to deploy military assets onto foreign territory, the operation risks violating the sovereignty of the target state, which may not only expose the sender state to legal liability but also trigger hostility that complicates the situation. Second, deployment of troops onto foreign territory constitutes a use of force without justification. The precondition to override such restrictions is the target state's consent. In practice, states usually take such permission as the justification for their action. For instance, the U.S.\ invoked this argument when it launched an evacuation operation to rescue American hostages in Iran in 1980, despite the eventual abortion of the plan due to technical failures. However, consent from the target state can be legally contested---for example, when the target state government is at the brink of collapse and losing control over its territory in a civil war, issued consent is correspondingly called into question.
+
+Without valid consent from the target state government, sender states are theoretically still able to proceed on the grounds of self-defense, which empowers states to use force against armed attack. However, the self-defense doctrine has been widely invoked in contentious circumstances: by Russia in its invasion of Georgia in 2008 and Ukraine in 2022, and by Israel in its military operations in Palestine and Lebanon. To what extent can a state extend the notion of ``self'' to citizens abroad, and how legally justifiable is using self-defense as the grounds for the use of force on foreign territories? Despite several proposals for establishing a common legal standard, the legality of states' use of force to protect overseas citizens remains unresolved under modern international law \autocite{Alcala2024}.
+
+\blue{The legal ambiguity has a direct behavioral implication: it means that the \emph{political} calculus, rather than the \emph{legal} one, tends to be decisive. States that face strong domestic pressure to act will find legal justifications; states that face weak pressure will cite legal constraints as cover for inaction. This further motivates the need for a framework centered on political costs rather than legal obligations.}
+
+\subsection{\blue{Operational Determinants}}
+
+Several factors have been identified in the policy literature that affect states' contingency planning. First, the scale of the operation---the number of citizens to evacuate---shapes evacuation strategy, with lower numbers associated with civilian operations such as chartered flights and ferries while larger numbers are more likely to involve the military. Second, the location of the operation matters in two ways: its geographical features (coastal or inland) and its security environment (benign or hostile).
+
+Third, diplomatic relations with the target state make a difference, though the specific effect can be mixed. Friendly relations may facilitate cooperation: China's relationship with Yemen was reportedly useful in expediting permission for Chinese warships to dock at the Port of Aden during its 2015 operation \autocite{Zhao2015}. By contrast, benign relations may discourage operations altogether: France and the U.K.\ reportedly disagreed on whether an NEO was required in C\^{o}te d'Ivoire in 2004, partly due to concerns that evacuation of French nationals would send negative diplomatic signals.
+
+Fourth, resource constraints and operational practicability matter. States' military assets specifically designated for NEO purposes are minimal. If a crisis breaks out when deployable assets are committed elsewhere, the state may find itself unable to respond. With increasing public pressure for lower state spending and shrinking defense budgets, states are increasingly likely to be caught in such situations. As a result, states have sought to cooperate: after the U.K.'s Libya operation in 2011, a Multinational NEO Coordination Cell concept was floated, leading to the creation of the NEO Coordination Group---an informal body of nine European states plus Canada, Australia, and the U.S.\ that meets biannually \autocite{Sutherland2012}. Impressed by China's operational success in Libya, the U.K.\ also sought bilateral NEO cooperation with Beijing \autocite{Schwarck2016}. However, no significant coordinated evacuation has materialized in the decade since.
+
+\blue{The policy literature thus identifies a rich but unsystematized set of determinants. The framework I develop below consolidates these factors into two aggregate cost dimensions, preserving their diversity while rendering them analytically tractable.}
+
+%% ============================================================
+%% THEORETICAL FRAMEWORK
+%% ============================================================
+\section{\blue{Theoretical Framework}}
+
+\blue{The seemingly inexhaustible set of factors and the complexity of causal relationships might suggest the absence of coherent patterns in state evacuation behavior. However, by organizing these factors along two dimensions, a practical analytical framework emerges.}
+
+\blue{First, it is essential to distinguish between two types of states involved: the \emph{crisis state}, where violence or instability occurs, and the \emph{observer state}, which has citizens present in the crisis state during the incident. When a crisis emerges, the observer state's actions tend to be reactive rather than proactive, as the developments of the crisis are typically beyond its immediate control yet significantly threaten its citizens' welfare.}
+
+\blue{One might object that observer states sometimes have interests or stakes in the crisis itself, calling into question their purely reactive nature. However, even when the observer state has a vested interest---as in proxy conflicts or externally supported insurgencies---broader strategic goals typically influence military, economic, or diplomatic actions rather than the specific management of civilian evacuations. When the U.S.\ and its allies decided to withdraw from Afghanistan, their decision-making regarding military withdrawal and civilian evacuation were separate processes. The Biden Administration announced U.S.\ military withdrawal on April 14, 2021, and both the U.S.\ and its EU allies remained largely silent regarding citizen protection for months. It was not until mid-August that, amid immense pressure, the U.S.\ deployed forces to evacuate diplomats, civilians, and at-risk Afghans \autocite{Riekeles2023}.}
+
+\subsection{\blue{The Cost-Minimization Model}}
+
+\blue{Given the generally reactive nature of evacuation decisions, observer states' actions can be modeled through a rationalist, loss-cutting approach that aims to minimize costs arising from external crises. Two main types of costs can be identified:}
+
+\blue{\textbf{Cost of action} encompasses the resources needed to execute evacuations, shaped by:}
+\begin{itemize}
+    \item \blue{The number of citizens requiring evacuation;}
+    \item \blue{Accessibility of evacuation routes (land, sea, air);}
+    \item \blue{Availability of commercial transport options;}
+    \item \blue{Intensity of the conflict (proxied by casualties);}
+    \item \blue{Opportunity costs of redirecting military assets; and}
+    \item \blue{Diplomatic relations with the crisis state.}
+\end{itemize}
+
+\blue{\textbf{Cost of inaction} encompasses the political and material losses from non-response:}
+\begin{itemize}
+    \item \blue{Domestic political costs: media criticism, public outcry, and electoral consequences---what the audience cost literature would describe as the penalty leaders pay for failing to follow through on (implicit or explicit) commitments to citizen protection \autocite{Fearon1994};}
+    \item \blue{Tangible losses: citizen casualties, damage to overseas economic interests (FDI, contracts); and}
+    \item \blue{International reputation costs: perceived inability to protect nationals undermines a state's standing and may embolden future threats.}
+\end{itemize}
+
+\blue{The connection to audience cost theory is worth emphasizing. Although Fearon's original formulation concerns interstate crisis bargaining, the underlying logic---that leaders face domestic punishment for backing down from commitments---applies directly to evacuation decisions. As Section 2.1 documented, politicians routinely affirm their commitment to citizen protection, and the public consistently expects governments to act. When a crisis erupts, the gap between rhetoric and action creates the conditions for audience costs. The key insight is that the \emph{cost of inaction} is not fixed; it is endogenous to the political environment, shaped by media coverage, diaspora mobilization, and the visibility of other states' responses.}
+
+\subsection{\blue{Predictions}}
+
+\blue{The interplay between these two cost dimensions yields four scenarios:}
+
+\begin{table}[htbp]
+\centering
+\blue{\caption{Matrix of State Evacuation Decisions}}
+\label{tab:matrix}
+\begin{tabular}{l|cc}
+\toprule
+ & \textbf{Low Cost of Inaction} & \textbf{High Cost of Inaction} \\
+\midrule
+\textbf{Low Cost of Action} & \blue{Routine evacuation} & \blue{Vigorous evacuation} \\
+\textbf{High Cost of Action} & \blue{Non-response} & \blue{Indeterminate} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\blue{\textbf{Cell 1: Low action cost, low inaction cost $\rightarrow$ routine evacuation.}} When both costs are low, states face a straightforward decision and will typically facilitate an orderly departure. During Burundi's civil unrest in 2015, the violence was sufficient to threaten U.S.\ citizens but not severe enough to disrupt available evacuation routes, keeping the cost of action low. Limited U.S.\ public attention and negligible business interests in Burundi maintained a low cost of inaction, prompting the U.S.\ government to facilitate chartered evacuations upon citizen request.
+
+\blue{\textbf{Cell 2: Low action cost, high inaction cost $\rightarrow$ vigorous evacuation.}} When action is cheap but inaction is politically costly, the cost-benefit calculus overwhelmingly favors a forceful response. \blue{The U.S.\ response to the 2023 Israel crisis, discussed in Section 4, illustrates this cell: commercial routes remained open (low action cost), but the political salience of the crisis and American casualties created intense pressure to act (high inaction cost).}
+
+\blue{\textbf{Cell 3: High action cost, low inaction cost $\rightarrow$ non-response.}} When action is expensive and the domestic political environment does not punish inaction, states will decline to intervene. During the May 1998 riots in Indonesia, when civil unrest and mass violence was directed at the local Chinese community, the Chinese government faced high costs of action given limited military capacity, the convoluted political situation, and the diplomatic pressure it would face in case of intervention. However, the cost of inaction was low because information was suppressed domestically, and the Chinese economy was largely disconnected from the Chinese community in Indonesia. The Chinese government kept silent about the violence even as it was directed against ethnic Chinese.
+
+\blue{\textbf{Cell 4: High action cost, high inaction cost $\rightarrow$ indeterminate.}} \blue{This is the theoretically most interesting and empirically most consequential cell. When both dimensions push in opposing directions, the outcome depends on which cost dominates---a determination shaped by leader preferences, institutional constraints, and the relative weight of domestic versus international considerations. The U.K.\ response to the 2011 Libya crisis, discussed in Section 4, falls in this cell: evacuation was logistically difficult, but media criticism forced the government's hand. I return to this cell in the conclusion as a priority for future research.}
+
+%% ============================================================
+%% CASE STUDIES
+%% ============================================================
+\section{Case Studies}
+
+\blue{I now illustrate the framework with two sets of cases. The first traces U.S.\ behavior across the 2006 Lebanon, 2023 Israel, and 2024 Lebanon crises, exploiting variation in the same state's response to crises in the same region. The second compares five states' responses to the 2011 Libya crisis, exploiting cross-national variation in responses to the same event.}
+
+\subsection{The U.S.\ in Lebanon and Israel, 2006--2024}
+
+\subsubsection{2006 Israel-Lebanon War}
+
+The 2006 Lebanon War between Hezbollah and Israel broke out on 12 July 2006. There were an estimated 50,000 Americans in the country at the time. Shortly after the outbreak, the U.S.\ embassy in Beirut was overwhelmed with requests from citizens seeking to leave the conflict zone. Given the magnitude of the population to evacuate, the Department of State (DOS) decided to request military assistance from the Department of Defense (DOD)---an unusual measure, since in most evacuation cases DOS relies on commercially available transportation, despite the Memorandum of Agreement between the two agencies on the protection and evacuation of U.S.\ citizens from threatened areas overseas. Eventually, the U.S.\ government leveraged military assets (including naval ships, planes, and military-contracted ships) and commercial resources to evacuate nearly 15,000 Americans from Lebanon from 19 July to 2 August \autocite{GAO2007}.
+
+There are several notable factors during the evacuation operation. The first is the unpredictability of the conflict. The conflict escalated so suddenly that existing contingency tools proved inadequate. Although DOS requires all embassies to maintain precautionary measures---including an Emergency Action Plan (EAP) with ``tripwires'' for determining when to authorize departures, regular Crisis Management Exercises (CME) every 1 to 2.5 years, and an F-77 report estimating Americans in-country---these tools turned out to be insufficient. The EAP was too unwieldy to consult in a fast-moving crisis, the CME had not accounted for such a rapidly changing situation with such a large affected population, and the F-77 estimates were inaccurate because overseas registration of U.S.\ citizens was not mandatory.
+
+The second is the restrictedness of evacuation options. Israel bombed Beirut's airport immediately after the conflict broke out, making conventional air evacuation unavailable. Israeli forces subsequently blockaded ports, ruling out sea evacuation by commercial vessels. Large-scale crossfire made land transportation prohibitively risky. The military strategy of the belligerents rendered civilian-led transportation in or out of the conflict zone essentially impossible. Although the GAO report attributed DOD involvement to the scale of the evacuation, \blue{the closure of all civilian routes was likely the decisive factor prompting DOS to request military assistance.}
+
+The third is communication failure between the government and the public. DOS originally tried to centralize media contact in Washington, preventing the local embassy from speaking to the press, which led to serious information lags and heightened anxiety among local citizens. The consular taskforce was overwhelmed by calls and requests, making consular resources essentially inaccessible. Even when citizens reached consular officials, the U.S.\ government delivered confusing information. The embassy first stated that reimbursement would not be collected, which allegedly led to a larger-than-expected number of people requesting evacuation. When the evacuation began, however, embassy staff asked all evacuees to sign a promissory note. Five days into the operation, they cancelled the requirement, acknowledging it had become a hurdle.
+
+\subsubsection{The 2023 Israel and 2024 Lebanon Crises}
+
+On 8 October 2023, Hezbollah launched rockets at Israeli positions following the 7 October Hamas-led attack on Israel. Four days after the outbreak, the U.S.\ government arranged at least four charter flights per day out of Israel and promised to augment capacity in the following days. On Day 6, Secretary of State Antony Blinken stated that the State Department would continue pushing regional countries for safe passage in and out of Gaza. Since the Hamas attack, at least 27 Americans had been killed---a death toll that arguably contributed to the swift governmental response.
+
+One year later, on 1 October 2024, Israel invaded Southern Lebanon. One day before the invasion, State Department spokesman Matthew Miller announced: ``We are not evacuating American citizens from Lebanon at this time.'' Three days into the invasion, the U.S.\ government arranged commercial flights (by reserving seats) to bring about 350 Americans and their immediate relatives (with existing U.S.\ or Schengen visas) out of Lebanon. However, the government provided no transportation or protection for citizens to reach the airport---located just three kilometers from a Hezbollah headquarters that had been targeted by Israeli airstrikes. Moreover, the embassy in Beirut suspended visa-processing services, preventing many family members of U.S.\ citizens from securing visas. This restriction prompted many Americans with non-American relatives to refuse to leave, leading to an unusual situation where reserved evacuation seats went unfilled. Of approximately 60,000 U.S.\ citizens in the country, 8,500 initially contacted the embassy for assistance. One week after the invasion, around 1,000 citizens and dependents were evacuated to Turkey via commercial flights. Instead of deploying military assets as Turkey and its NATO allies did, the U.S.\ deployed a small additional force to the region to ``ready for'' a potential evacuation---reportedly motivated by concerns about uncertainty regarding Israel's military plans.
+
+Being two nodes of the same thread, the two crises prompted sharply different U.S.\ responses. In the 2023 Israel evacuation, the government created a Visa Waiver Program for family members of Israeli Americans, whereas in the 2024 Lebanon evacuation, no such program was available and citizens were told to ``drop off'' their non-U.S.\ relatives in Turkey on their own way back. Moreover, there was no ``expectation management'' during the Israel crisis---it was reported that the U.S.\ was preparing to evacuate 600,000 Americans in the event of a full-scale ground invasion in Gaza. By contrast, the government consciously downplayed its responsibility before the Lebanon conflict:
+
+\begin{quote}
+The U.S.\ Embassy is not evacuating U.S.\ citizens at this time. There is a commercially available flight[;] the U.S.\ citizens who expressed interest in departing Lebanon will have to book and pay directly with the airline. (U.S.\ Embassy Beirut post on X, Sep 27, 2024)
+\end{quote}
+
+As Congresswoman Rashida Tlaib, representing a large Lebanese community in Michigan, pointed out, the ``available flights'' were repeatedly cancelled, and available airfare amounted to \$8,000.
+
+The apparent differential treatment led to intense criticism, especially among the Arab American community---a key constituency for the Democratic Party. The Biden administration was criticized as treating ``Americans of Lebanese descent \ldots\ as lesser U.S.\ citizens than Israeli U.S.\ citizens.'' The inadequate response led to pro-Lebanon rallies and protests in Michigan, costing Kamala Harris at least 22,000 votes in the traditionally blue state in the 2024 Presidential Election \autocite{Perkins2024}.
+
+\blue{\subsubsection{Framework Application}
+
+The paired comparison of these crises is particularly useful for the cost-minimization framework because many structural variables are held constant: same observer state, same region, similar crisis type, similar estimated citizen populations ($\sim$50,000--60,000). What varies are the cost dimensions.
+
+In the 2006 Lebanon case, the cost of action was high (all civilian routes were closed, requiring military deployment for 50,000 citizens) but the cost of inaction was also high (massive consular demand, media coverage, reputational stakes). This corresponds to the ``indeterminate'' cell---and the U.S.\ ultimately acted, suggesting that the inaction costs dominated.
+
+In the 2023 Israel case, the cost of action was relatively low (commercial routes remained open, airports functional) while the cost of inaction was high (27 American casualties, intense media scrutiny, strong domestic political salience). This is the ``vigorous evacuation'' cell, and the U.S.\ response was indeed forceful and swift.
+
+In the 2024 Lebanon case, the cost of action was moderately high (airport accessibility uncertain, Israeli strikes nearby) but---critically---the cost of inaction was \emph{perceived as low} by the administration, which appears to have calculated that the Lebanese American diaspora carried less electoral weight than the Israeli American community. The administration actively sought to manage expectations downward, signaling non-obligation. The result was a minimal response. However, the administration miscalculated: the electoral costs in Michigan suggest that the actual cost of inaction was higher than anticipated, a pattern consistent with the framework's prediction that the ``indeterminate'' cell is prone to strategic misjudgment.}
+
+\subsection{The 2011 Libya Crisis: Cross-National Comparison}
+
+The 2011 Libya crisis erupted in February when anti-government protests escalated rapidly into widespread violence. \blue{The crisis prompted evacuation responses from multiple states, offering cross-national variation in how different governments weighed the same external shock.}
+
+\textbf{China.} After public pressure mounted on social media during an initial period of hesitation, the Chinese government organized one of its largest-ever overseas evacuations, mobilizing military and civilian resources including naval frigates, civilian aircraft, and commercial vessels to evacuate over 12,000 nationals \autocite{Reuters2011}. The operation was widely perceived domestically as a successful demonstration of governmental capability and responsibility \autocite{Zerba2014}.
+
+\textbf{United States.} With fewer citizens at immediate risk, the U.S.\ undertook a more modest operation, chartering a commercial ferry to evacuate around 300 Americans from Tripoli to Malta. \blue{Given the small citizen population (low inaction cost) and the logistical challenges (moderate action cost), the limited response is consistent with the framework.}
+
+\textbf{United Kingdom.} The U.K.\ initially faced substantial domestic criticism for perceived delays and poor communication. As the crisis unfolded and public pressure intensified, the British government escalated its efforts, deploying military assets including aircraft and special forces in high-profile rescue missions. British forces even ventured to rescue nationals stranded at remote oil facilities without explicit Libyan consent, with one military asset injured by crossfire during the operation---\blue{reflecting that public pressure was so intense that the government accepted high-risk action. This is a clear instance of the ``indeterminate'' cell resolving toward action: the cost of inaction (parliamentary inquiry, media excoriation) ultimately outweighed the high cost of action.}
+
+\textbf{France.} France rapidly initiated evacuation efforts, deploying military transport planes and naval vessels to evacuate about 500 nationals and other Europeans. It also led, alongside the U.K., the push for international intervention against the Gaddafi regime. Notably, French authorities remained silent about their stance on the crisis until they concluded their evacuation efforts---\blue{suggesting that evacuation removed the domestic political constraint (cost of inaction) that would have complicated their subsequent military intervention decision.}
+
+\textbf{Germany.} Germany did not join the international intervention in Libya, abstaining on UN Resolution 1973 \autocite{Rousseau2016}. However, Berlin sent three warships with 600 soldiers to evacuate around 160 German and other European nationals. \blue{The disjunction between Germany's refusal to intervene militarily and its willingness to deploy warships for evacuation underscores that NEO decisions operate on a separate logic from broader foreign policy alignment---one centered on the domestic political costs of abandoning citizens rather than on strategic considerations about the conflict itself.}
+
+%% ============================================================
+%% RESEARCH DESIGN
+%% ============================================================
+\section{\blue{Research Design}}
+
+\subsection{Measurement}
+
+The advantage of the cost-of-action/cost-of-inaction model is not only that it is analytically parsimonious, but that it consolidates a wide range of factors into two analyzable variables that aggregate multiple indicators.
+
+\blue{\textbf{Cost of action}} can be measured as a function of: (1) the number of citizens to evacuate; (2) the accessibility of land, sea, and air routes, expressed as a categorical variable; (3) the availability of commercial transportation, expressed as a categorical variable; (4) intensity of the crisis, proxied by daily casualties (where daily data is unavailable, the closest available casualty period will substitute); and (5) diplomatic relations between the crisis state and the observer state, proxied by UN voting alignment \autocite{Bailey2016}.
+
+\blue{\textbf{Cost of inaction}} can be measured as a function of: (1) latent political pressure and (2) assets at risk. Latent political pressure will be measured by a combination of media coverage and civil demonstrations. Specifically, media coverage of the crisis after its outbreak and before the state announces action (or remains silent) will be counted as the first-level indicator, capturing the likelihood that citizens of the observer state are aware of the crisis. Media coverage of criticism about the observer state's lack of action or other observer states' active efforts will serve as second-level data (assigned more weight) capturing the orientation of the media environment. Incidents of civil demonstration (e.g., the Lebanese community rally in Michigan) or direct political pressure (e.g., Tlaib's public complaints) will serve as an augmenting factor that, if present, bolsters the latent political pressure variable. Assets at risk will be measured by the volume of foreign direct investment and contracts from the observer state in the crisis region.
+
+\subsection{\blue{Pilot Dataset}}
+
+\blue{I use the Uppsala Conflict Data Program (UCDP) as the base for a pilot dataset. UCDP is preferable to alternatives (ACLED, COW) for several reasons: it includes intra-state conflicts omitted from COW; it records multiple dates for recurring events---cases where a conflict breaks out, subsides, and re-escalates, prompting a new round of state response (e.g., South Sudan); and it measures conflict intensity, allowing me to filter out low-casualty events unlikely to necessitate state action. I export all events with intensity level 2 (at least 1,000 battle-related deaths in a given year) and manually collect variables including location, year, event date, type, action date, number of citizens evacuated and estimated, personnel deployed, military and non-military means used, and source documentation.}
+
+\blue{As a first step, the pilot covers U.S.\ government behavior during events from 2006 to 2022. If this scheme proves workable, I will proceed to collect data for other major states (U.K., Canada, Germany, France, China) to enable cross-national comparison.}
+
+\subsection{Limitations}
+
+The model and measurement design have several limitations. First, the two cost dimensions should potentially encompass more indicators, but many are either hard to operationalize (such as the opportunity cost of diverting military resources from elsewhere) or simply unobservable (such as idiosyncratic political stakes in a specific evacuation), undermining the construct validity of the two independent variables. Second, the measurement for the indicators above requires more fine-grained design to enhance accuracy and statistical analyzability. Third, the two independent variables are not completely independent from each other; an interaction effect needs to be examined at the indicator level, adding statistical complexity. \blue{Fourth, the framework as currently specified applies most naturally to states with meaningful military projection capacity; for small states that cannot feasibly mount military evacuations, the ``cost of action'' is essentially prohibitive, and the framework degenerates into a prediction of non-response except where commercial options exist. Future extensions should theorize the distinct decision calculus of states with limited capacity.} Lastly, there are no existing established resources for the relevant data, and sources of reliable and adequate data remain an ongoing exploration.
+
+\blue{A further concern is endogeneity between the two cost dimensions. States that anticipate high costs of inaction may take pre-emptive measures (such as pre-positioning military assets or issuing travel advisories) that \emph{reduce} the cost of action. The 2006 Lebanon case illustrates this: the U.S.\ military was eventually deployed \emph{because} of political pressure, but that deployment itself lowered the marginal cost of subsequent evacuees. Disentangling these feedback loops will require careful temporal sequencing in empirical analysis.}
+
+%% ============================================================
+%% CONCLUSION
+%% ============================================================
+\section{Conclusion}
+
+\blue{This paper has argued that the wide variation in how states protect their citizens abroad during crises can be usefully analyzed through a rationalist cost-minimization framework. By distinguishing between the cost of action---the material and logistical resources required for evacuation---and the cost of inaction---the political and economic penalties for failing to act---the framework generates predictions about when states will mount vigorous evacuations, token efforts, or deliberate non-responses.}
+
+\blue{The case studies offer preliminary support for the framework's logic. The U.S.\ responded forcefully when action costs were low and inaction costs were high (Israel 2023), and tepidly when the perceived cost of inaction was low despite moderate action costs (Lebanon 2024)---though the electoral consequences in Michigan suggest the administration misjudged the true cost of inaction. The 2006 Lebanon case and the U.K.'s Libya response illustrate the ``indeterminate'' cell, where high costs on both dimensions produce difficult trade-offs that can resolve in either direction depending on the intensity of political pressure. China's contrasting behavior in Libya 2011 (vigorous evacuation under social media pressure) and Indonesia 1998 (silence under information suppression) further illustrates how the cost of inaction---particularly its domestic political component---drives the outcome.}
+
+\blue{The framework connects to several established research programs. It draws on the logic of audience costs \autocite{Fearon1994}, extending it from interstate crisis bargaining to the domain of citizen protection: leaders who have implicitly or explicitly committed to protecting nationals face domestic punishment for inaction. It also resonates with Putnam's two-level games \parencite{Putnam1988}, in that evacuation decisions are shaped by the interaction between international constraints (sovereignty, logistics, diplomatic relations) and domestic pressures (media, diaspora mobilization, electoral consequences). Germany's Libya behavior---refusing military intervention while deploying warships for citizen evacuation---exemplifies how domestic-level imperatives can override international-level positioning.}
+
+\blue{Several avenues for future research emerge. First, the ``indeterminate'' cell (high cost of action, high cost of inaction) demands further theorization. Under what conditions does one cost dimension dominate the other? Leader type, regime type, and institutional constraints likely moderate this trade-off. Second, the role of information environments deserves systematic attention. China's contrasting behavior in Libya (where social media amplified pressure) and Indonesia (where state media suppressed it) suggests that media structure mediates the cost of inaction in ways that vary across regime types. Third, the framework should be extended to non-great-power states, whose evacuation options are structurally constrained and who may rely on multilateral mechanisms or bilateral agreements with capable states.}
+
+Although the research design is far from complete at this stage, this project constitutes, to the author's knowledge, the first attempt in political science literature to systematically analyze state behavior in fulfilling (or evading) its responsibility to protect overseas citizens during crises. \blue{The framework draws on established analytical tools---rationalist cost-benefit analysis, audience cost theory, and UN voting alignment measures---to impose structure on a phenomenon that has been treated as ad hoc and idiosyncratic. By doing so, it aims to contribute both to the international political economy literature, by highlighting the political ramifications of globalization and mass mobility, and to security studies, by unpacking a ``non-traditional'' security challenge that increasingly shapes both foreign policy and domestic politics.}
+
+%% ============================================================
+%% APPENDIX
+%% ============================================================
+\appendix
+\section{U.S.\ Formal Policies and Institutions}
+
+The obligations of the U.S.\ federal government to its citizens overseas are codified by the State Department Basic Authorities Act of 1956 (P.L.\ 84-885; 22 U.S.C.\ \S2715, hereinafter the BAA) and the Omnibus Diplomatic Security and Antiterrorism Act of 1986 (P.L.\ 99-399; 22 U.S.C.\ \S4802, hereinafter the ODSAA).
+
+Section 43 of the BAA requires the Department of State to serve as a clearinghouse of information on any major disaster or incident overseas affecting the health and safety of U.S.\ citizens. In addition, Section 4 of the BAA authorizes expenditures for the evacuation of ``private United States citizens or third-country nationals, on a reimbursable basis to the maximum extent practicable.'' Private U.S.\ citizens are thus generally responsible for a portion of the cost of their evacuation. The BAA limits the scope of repayment to ``a reasonable commercial air fare immediately prior to the events giving rise to the evacuation.'' However, there have been congressional attempts to amend or strike from law the BAA requirement obligating U.S.\ citizens to repay evacuation costs \autocite{HR5965}.
+
+Section 103 of the ODSAA requires DOS to ``develop and implement policies and programs to provide for the safe and efficient evacuation of \ldots\ private United States citizens when their lives are endangered.'' The public expectation of state-led evacuation in crisis is therefore legally codified in the U.S., and government efforts to inhibit such expectations are, strictly speaking, inconsistent with statutory obligations.
+
+Besides regularly updating travel advisories on its consular website, DOS fulfills its mandated responsibility mainly through two mechanisms. The first is the Smart Traveler Enrollment Program (STEP), a service that allows U.S.\ nationals to enroll their itinerary abroad to facilitate communication during emergencies. The second is the Overseas Security Advisory Council (OSAC), which serves as a channel of communication between DOS and U.S.\ private-sector entities abroad.
+
+%% ============================================================
+%% BIBLIOGRAPHY
+%% ============================================================
+\newpage
+\printbibliography
+
+\end{document}
