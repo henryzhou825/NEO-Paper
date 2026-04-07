@@ -1,43 +1,41 @@
 \documentclass[12pt]{article}
-
-% --- Packages ---
 \usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{natbib}
-\usepackage{setspace}
 \usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{caption}
 \usepackage{xcolor}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
 
 % --- Blue edit marker ---
 \newcommand{\edit}[1]{\textcolor{blue}{#1}}
 % All text in \edit{...} marks revisions to the original submission.
 
-\bibliographystyle{apsr}
-\onehalfspacing
-
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    citecolor=black,
-    urlcolor=black
-}
-
-\title{When States Rescue Their Own:\\ \edit{A Rationalist Framework for Explaining}\\ Non-Combatant Evacuation Operations}
-\author{Henry Zhou}
-\date{}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+\thispagestyle{fancy}
+\begin{center}
+\vspace*{2cm}
+{\Large\bfseries When States Rescue Their Own:\\ \edit{A Rationalist Framework for Explaining}\\ Non-Combatant Evacuation Operations}
+\vspace{1.5cm}
 
 \begin{abstract}
 \noindent \edit{What explains the variation in how states protect their citizens abroad during international crises? Despite the growing number of nationals overseas and the increasing frequency of evacuation operations, political science has paid remarkably little attention to this question. This paper develops a rationalist cost-minimization framework organized around two dimensions---the cost of action and the cost of inaction---that together generate predictions about when states will undertake vigorous evacuations, facilitated departures, or deliberate non-responses. I illustrate the framework with case studies of U.S.\ behavior during the 2006 and 2024 Lebanon crises, the 2023 Israel crisis, and a multi-state comparison of the 2011 Libya evacuations. I then propose a measurement strategy and pilot dataset design grounded in the Uppsala Conflict Data Program. The framework consolidates a wide range of situational factors into two analyzable dimensions and offers a foundation for systematic empirical investigation of a phenomenon that sits at the intersection of international political economy and security studies.}
 \end{abstract}
+\end{center}
+\end{titlepage}
 
-\newpage
+\doublespacing
 
 %% ============================================================
 %%  INTRODUCTION
@@ -278,6 +276,7 @@ Besides regularly updating travel advisories on its consular website, DOS fulfil
 %%  BIBLIOGRAPHY
 %% ============================================================
 \newpage
+\bibliographystyle{apsr}
 \bibliography{references}
 
 \end{document}
