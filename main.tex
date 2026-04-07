@@ -3,8 +3,6 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{array}
-\usepackage{tabularx}
 \usepackage{natbib}
 \usepackage{hyperref}
 \usepackage{setspace}
@@ -14,6 +12,9 @@
 \usepackage{fancyhdr}
 \renewcommand{\headrulewidth}{0pt}
 
+\newcommand{\edit}[1]{\textcolor{blue}{#1}}
+
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 
 \begin{document}
 
@@ -32,9 +33,6 @@
 
 \doublespacing
 
-%% ============================================================
-%%  INTRODUCTION
-%% ============================================================
 \section{Introduction}
 
 Globalization has facilitated not only the free movement of goods and capital across borders but also significantly increased the mobility of people. Massive international migration and tourism have resulted in large populations of citizens abroad who frequently face uncertainties beyond their home governments' control. For example, in 2022 there were approximately 4.4 million Americans overseas,\footnote{Federal Voting Assistance Program, ``Overseas Citizens,'' \url{https://www.fvap.gov/info/interactive-data-center/overseas}.} and around 3.5 million Britons abroad as of 2023.\footnote{\citet{OCarroll2024}.} This unprecedented scale has posed considerable challenges for states in terms of protecting their citizens abroad.
@@ -47,9 +45,6 @@ What explains this variation in state behavior regarding overseas citizen protec
 
 \edit{The paper proceeds as follows. Section~2 reviews the existing literature on state obligations, international legality, and situational determinants of evacuation operations. Section~3 develops the theoretical framework and derives observable predictions. Section~4 presents case studies of the U.S.\ response to the 2006 and 2024 Lebanon crises, the 2023 Israel crisis, and a multi-state comparison of the 2011 Libya evacuations. Section~5 outlines the proposed research design, measurement strategy, and limitations. Section~6 concludes.}
 
-%% ============================================================
-%%  LITERATURE REVIEW
-%% ============================================================
 \section{Literature Review}
 
 \edit{The existing literature on non-combatant evacuation operations (NEOs) spans several disciplines but lacks a unified analytical framework. I organize the relevant work along three dimensions: the normative question of state obligation, the legal question of sovereignty and use of force, and the practical question of operational determinants.}
@@ -86,9 +81,6 @@ The rising operational difficulty of citizen evacuation has made it increasingly
 
 \edit{The policy literature thus identifies a rich but unsystematized set of determinants. The framework I develop below consolidates these factors into two aggregate cost dimensions, preserving their diversity while rendering them analytically tractable.}
 
-%% ============================================================
-%%  THEORETICAL FRAMEWORK
-%% ============================================================
 \section{\edit{Theoretical Framework}}
 
 \edit{The seemingly inexhaustible set of factors and the complexity of causal relationships might suggest the absence of coherent patterns in state evacuation behavior. However, by organizing these factors along two dimensions, a practical analytical framework emerges.}
@@ -148,9 +140,6 @@ The rising operational difficulty of citizen evacuation has made it increasingly
 
 \edit{\textbf{Cell 4: High action cost, high inaction cost $\rightarrow$ indeterminate.}} \edit{This is the theoretically most interesting and empirically most consequential cell. When both dimensions push in opposing directions, the outcome depends on which cost dominates---a determination shaped by leader preferences, institutional constraints, and the relative weight of domestic versus international considerations. The U.K.\ response to the 2011 Libya crisis, analyzed in Section~4.3, falls in this cell: evacuation was logistically difficult, but media criticism forced the government's hand. I return to this cell in the conclusion as a priority for future research.}
 
-%% ============================================================
-%%  CASE STUDIES
-%% ============================================================
 \section{Case Studies}
 
 \edit{\subsection{Case Selection}
@@ -213,9 +202,6 @@ The 2011 Libya crisis erupted in February when anti-government protests escalate
 
 \textbf{Germany} \edit{(moderate action cost, moderate inaction cost $\rightarrow$ selective action).} Germany did not join the international intervention in Libya, abstaining on UN Resolution 1973 \citep{Rousseau2016}. However, Berlin sent three warships with 600 soldiers to evacuate around 160 German and other European nationals.\footnote{``Libya Protests,'' \emph{BBC News} (2011).} \edit{The disjunction between Germany's refusal to intervene militarily and its willingness to deploy warships for citizen evacuation underscores that NEO decisions operate on a fundamentally different logic from broader foreign policy alignment. Germany's calculation was straightforward: the cost of inaction on evacuation (media criticism, citizen casualties) was high enough to justify naval deployment, but the cost of inaction on \emph{intervention} (opposition to military adventurism, alliance with Russia on Libya) pointed in the opposite direction. The two decisions were made on separate cost-benefit calculations, confirming that the evacuation framework captures a distinct dimension of state behavior.}
 
-%% ============================================================
-%%  RESEARCH DESIGN
-%% ============================================================
 \section{\edit{Research Design}}
 
 \subsection{Measurement}
@@ -238,9 +224,6 @@ The model and measurement design have several limitations. First, the two cost d
 
 \edit{A further concern is endogeneity between the two cost dimensions. States that anticipate high costs of inaction may take pre-emptive measures (such as pre-positioning military assets or issuing travel advisories) that \emph{reduce} the cost of action. The 2006 Lebanon case illustrates this: the U.S.\ military was eventually deployed \emph{because} of political pressure, but that deployment itself lowered the marginal cost of subsequent evacuees. Disentangling these feedback loops will require careful temporal sequencing in empirical analysis.}
 
-%% ============================================================
-%%  CONCLUSION
-%% ============================================================
 \section{Conclusion}
 
 \edit{This paper has argued that the wide variation in how states protect their citizens abroad during crises can be usefully analyzed through a rationalist cost-minimization framework. By distinguishing between the cost of action---the material and logistical resources required for evacuation---and the cost of inaction---the political and economic penalties for failing to act---the framework generates predictions about when states will mount vigorous evacuations, facilitated departures, or deliberate non-responses.}
@@ -253,9 +236,6 @@ The model and measurement design have several limitations. First, the two cost d
 
 Although the research design is far from complete at this stage, this project constitutes, to the author's knowledge, the first attempt in political science literature to systematically analyze state behavior in fulfilling (or evading) its responsibility to protect overseas citizens during crises. \edit{The framework draws on established analytical tools---rationalist cost-benefit analysis, audience cost theory, and UN voting alignment measures---to impose structure on a phenomenon that has been treated as ad hoc and idiosyncratic. By doing so, it aims to contribute both to the international political economy literature, by highlighting the political ramifications of globalization and mass mobility, and to security studies, by unpacking a ``non-traditional'' security challenge that increasingly shapes both foreign policy and domestic politics.}
 
-%% ============================================================
-%%  APPENDIX
-%% ============================================================
 \appendix
 \section{U.S.\ Formal Policies and Institutions}
 
@@ -267,9 +247,6 @@ Section 103 of the ODSAA requires DOS to ``develop and implement policies and pr
 
 Besides regularly updating travel advisories on its consular website, DOS fulfills its mandated responsibility mainly through two mechanisms. The first is the Smart Traveler Enrollment Program (STEP), a service that allows U.S.\ nationals to enroll their itinerary abroad to facilitate communication during emergencies. The second is the Overseas Security Advisory Council (OSAC), which serves as a channel of communication between DOS and U.S.\ private-sector entities abroad.
 
-%% ============================================================
-%%  BIBLIOGRAPHY
-%% ============================================================
 \newpage
 \bibliographystyle{chicago}
 \bibliography{references}
