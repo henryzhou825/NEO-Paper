@@ -1,5 +1,5 @@
 *.aux
-*.bbl
+# *.bbl  -- included for Overleaf compatibility
 *.bcf
 *.blg
 *.log
